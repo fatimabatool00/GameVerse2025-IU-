@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GameVerse 2025 | National Gaming Tournament</title>
+        <link rel="icon" href="assets/images/logo.ico" type="image/x-icon"> <!-- Favicon for browser tab -->
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="assets/images/logo.ico" alt="GameVerse Logo" class="logo-img">
+                GAMEVERSE 2025
+              </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#games">Games</a>
+                <a href="#prizes">Prizes</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#register">Register</a>
+                <a href="#faq">FAQ</a>
+                <button id="themeToggle" class="theme-toggle"><i class="fas fa-moon"></i></button>
+            </div>
+            <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video autoplay muted loop class="hero-video">
+            <source src="assets/videos/teaser.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="glitch">BATTLE FOR GLORY</h1>
+                <p class="tagline">Oct 10-12, 2025 | PKR 300,000 Prize Pool</p>
+                <div class="countdown" id="countdown"></div>
+                <a href="#register" class="cta-btn pulse">Register Now <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="section games">
+        <div class="container">
+            <h2 class="section-title">Featured Games</h2>
+            <div class="game-grid"></div>
+        </div>
+    </section>
+
+    <!-- Prize Section
+    <section id="prizes" class="section prizes">
+        <div class="container">
+            <h2 class="section-title">Prize Breakdown</h2>
+            <div class="prize-chart">
+                <div class="pie-chart" data-percent="50">1st<br>PKR 150,000</div>
+                <div class="pie-chart" data-percent="30">2nd<br>PKR 90,000</div>
+                <div class="pie-chart" data-percent="20">3rd<br>PKR 60,000</div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section schedule">
+        <div class="container">
+            <h2 class="section-title">Event Schedule</h2>
+            <div class="timeline"></div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="section registration">
+        <div class="container">
+            <h2 class="section-title">Registration</h2>
+            <form id="registrationForm" class="registration-form">
+                <div class="form-toggle">
+                    <button type="button" class="toggle-btn active" data-form="team">Team Registration</button>
+                    <button type="button" class="toggle-btn" data-form="solo">Solo Registration</button>
+                </div>
+                
+                <div class="form-content active" id="teamForm">
+                    <input type="text" placeholder="Team Name" required>
+                    <input type="text" placeholder="University" required>
+                    <input type="email" placeholder="Team Leader Email" required>
+                    <div class="members">
+                        <input type="text" placeholder="Member 1" required>
+                        <input type="text" placeholder="Member 2">
+                        <input type="text" placeholder="Member 3">
+                        <input type="text" placeholder="Member 4">
+                    </div>
+                    <select required>
+                        <option value="">Select Game</option>
+                        <option>PUBG Mobile</option>
+                        <option>Call of Duty</option>
+                    </select>
+                </div>
+
+                <div class="form-content" id="soloForm">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="University" required>
+                    <input type="email" placeholder="Email" required>
+                    <select required>
+                        <option value="">Select Game</option>
+                        <option>FIFA 25</option>
+                    </select>
+                </div>
+                <button type="submit" class="cta-btn">Submit Registration</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+        <div class="container">
+            <h2 class="section-title">FAQ</h2>
+            <div class="faq-grid"></div>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>Contact: gameverse@iuic.edu.pk</p>
+            <p>© 2025 Gaming Club IUIC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Confetti Container -->
+    <div id="confetti"></div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
