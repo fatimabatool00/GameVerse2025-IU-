@@ -86,26 +86,59 @@ document.addEventListener('DOMContentLoaded', () => {
         gameGrid.appendChild(card);
     });
     
-    // Registration Form Toggle
-    const toggleButtons = document.querySelectorAll('.toggle-btn');
-    const teamForm = document.getElementById('teamForm');
-    const soloForm = document.getElementById('soloForm');
-
-    toggleButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            toggleButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            if (btn.dataset.form === 'team') {
-                teamForm.classList.add('active');
-                soloForm.classList.remove('active');
-            } else {
-                teamForm.classList.remove('active');
-                soloForm.classList.add('active');
+    
+        // Registration Form Toggle
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+        const teamForm = document.getElementById('teamForm');
+        const soloForm = document.getElementById('soloForm');
+    
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                toggleButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+    
+                if (btn.dataset.form === 'team') {
+                    teamForm.classList.add('active');
+                    soloForm.classList.remove('active');
+                } else {
+                    teamForm.classList.remove('active');
+                    soloForm.classList.add('active');
+                }
+            });
+        });
+    
+        // Game selection dynamic input fields for Team Registration
+        const gameSelect = document.getElementById('gameSelect');
+        const membersDiv = document.querySelector('.members');
+        
+        gameSelect.addEventListener('change', () => {
+            // Clear existing member input fields
+            membersDiv.innerHTML = '';
+    
+            // Add member fields based on the selected game
+            if (gameSelect.value === 'pubg') {
+                // Add 4 members for PUBG Mobile
+                for (let i = 1; i <= 4; i++) {
+                    const inputField = document.createElement('input');
+                    inputField.type = 'text';
+                    inputField.placeholder = `Member ${i}`;
+                    inputField.required = i === 1; // First member is required
+                    membersDiv.appendChild(inputField);
+                }
+            } else if (gameSelect.value === 'cod') {
+                // Add 5 members for Call of Duty
+                for (let i = 1; i <= 5; i++) {
+                    const inputField = document.createElement('input');
+                    inputField.type = 'text';
+                    inputField.placeholder = `Member ${i}`;
+                    inputField.required = i === 1; // First member is required
+                    membersDiv.appendChild(inputField);
+                }
             }
         });
-    });
-
+   
+    
+    
     // FAQ Section
     const faqData = [
         {
@@ -142,7 +175,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ✅ Enhanced Registration Submission + Clear Fields
+    // document.querySelectorAll('.faq-question').forEach(question => {
+    //     question.addEventListener('click', () => {
+    //       const faqItem = question.parentElement;
+    //       faqItem.classList.toggle('active');
+    //       const toggle = question.querySelector('.toggle');
+    //       toggle.textContent = faqItem.classList.contains('active') ? '−' : '+';
+    //     });
+    //   });
+      
+    // Registration Submission 
     const registrationForm = document.getElementById('registrationForm');
 
     registrationForm.addEventListener('submit', (e) => {

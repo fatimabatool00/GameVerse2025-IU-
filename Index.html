@@ -12,7 +12,7 @@
 <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
+        <div class="nav-wrapper">
             <a href="#" class="logo">
                 <img src="assets/images/logo.ico" alt="GameVerse Logo" class="logo-img">
                 GAMEVERSE 2025
@@ -30,7 +30,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <!-- <section class="hero">
         <video autoplay muted loop class="hero-video">
             <source src="assets/videos/teaser.mp4" type="video/mp4">
         </video>
@@ -38,13 +38,24 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="glitch">BATTLE FOR GLORY</h1>
-                <p class="tagline">Oct 10-12, 2025 | PKR 300,000 Prize Pool</p>
+                <p class="tagline">May 23, 2025 | PKR 300,000 Prize Pool</p>
+                <div class="countdown" id="countdown"></div>
+                <a href="#register" class="cta-btn pulse">Register Now <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section> -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="glitch">BATTLE FOR GLORY</h1>
+                <p class="tagline">May 23, 2025 | PKR 300,000 Prize Pool</p>
                 <div class="countdown" id="countdown"></div>
                 <a href="#register" class="cta-btn pulse">Register Now <i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
     </section>
-
+    
     <!-- Games Section -->
     <section id="games" class="section games">
         <div class="container">
@@ -93,10 +104,10 @@
                         <input type="text" placeholder="Member 3">
                         <input type="text" placeholder="Member 4">
                     </div>
-                    <select required>
+                    <select id="gameSelect" required>
                         <option value="">Select Game</option>
-                        <option>PUBG Mobile</option>
-                        <option>Call of Duty</option>
+                        <option value="pubg">PUBG Mobile</option>
+                        <option value="cod">Call of Duty</option>
                     </select>
                 </div>
 
@@ -122,6 +133,8 @@
         </div>
     </section>
 
+    
+      
     <!-- Footer & Contact -->
     <footer class="footer">
         <div class="container">

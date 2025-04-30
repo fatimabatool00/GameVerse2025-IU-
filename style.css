@@ -51,17 +51,41 @@ body {
     margin: 0 auto;
 }
 
-.logo {
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+/* .logo {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     color: var(--accent-cyan);
     text-decoration: none;
-}
+} */
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--accent-cyan);
+}
+.logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
 .nav-links {
     display: flex;
     gap: 2rem;
     align-items: center;
+    text-align: right;
 }
 
 .nav-links a {
@@ -75,8 +99,8 @@ body {
 }
 
 /* Hero Section */
-.hero {
-    height: 100vh;
+/* .hero {
+    height: 80vh;
     position: relative;
     overflow: hidden;
 }
@@ -105,6 +129,33 @@ body {
     z-index: 1;
     text-align: center;
     padding-top: 20vh;
+} */
+
+.hero {
+    position: relative;
+    background-image: url('assets/images/heroSecImage.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    text-align: center;
 }
 
 .glitch {
@@ -200,6 +251,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .nav-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .nav-links {
         position: fixed;
         top: 70px;
@@ -241,7 +296,7 @@ body {
     margin-top: 5px;
     letter-spacing: 3px;
 }
-.logo {
+/* .logo {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -256,4 +311,165 @@ body {
     height: 60px;
     object-fit: contain;
   }
-  
+   */ 
+
+   @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+   .game-detail {
+     font-family: 'Orbitron', sans-serif;
+     background: url('https://images.unsplash.com/photo-1602318796591-3b2b061a2186?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+     background-size: cover;
+     padding: 60px 0;
+     color: #fff;
+   }
+   
+   .game-detail .container {
+     max-width: 800px;
+     margin: 0 auto;
+     padding: 30px;
+     background: rgba(0, 0, 0, 0.85);
+     border-radius: 12px;
+     box-shadow: 0 0 20px rgba(0, 255, 100, 0.2);
+     border: 1px solid #333;
+   }
+   
+   .game-detail h1 {
+     font-size: 3rem;
+     color: #00ff99;
+     margin-bottom: 10px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     text-align: center;
+     border-bottom: 2px solid #00ff99;
+     padding-bottom: 10px;
+   }
+   
+   .game-detail h2 {
+     font-size: 2rem;
+     color: #ff3333;
+     margin-top: 30px;
+     border-bottom: 1px solid #444;
+     padding-bottom: 5px;
+   }
+   
+   .game-detail p {
+     font-size: 1.2rem;
+     margin: 10px 0;
+   }
+   
+   .game-detail ul {
+     list-style-type: square;
+     padding-left: 20px;
+   }
+   
+   .game-detail li {
+     font-size: 1.1rem;
+     margin: 8px 0;
+     color: #ccc;
+     transition: color 0.3s ease;
+   }
+   
+   .game-detail li:hover {
+     color: #00ffcc;
+   }
+   
+   @media (max-width: 600px) {
+     .game-detail .container {
+       margin: 20px;
+       padding: 20px;
+     }
+   
+     .game-detail h1 {
+       font-size: 2.2rem;
+     }
+   
+     .game-detail h2 {
+       font-size: 1.6rem;
+     }
+   
+     .game-detail p, 
+     .game-detail li {
+       font-size: 1rem;
+     }
+   }
+   
+   
+   /* FIFA 25 Game Detail Styling */
+   .game-detail.fifa {
+       font-family: 'Orbitron', sans-serif;
+       background: url('https://images.unsplash.com/photo-1549921296-3a6b264b4f01?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+       background-size: cover;
+       padding: 60px 0;
+       color: #fff;
+     }
+     
+     .game-detail.fifa .container {
+       max-width: 800px;
+       margin: 0 auto;
+       padding: 30px;
+       background: rgba(0, 0, 0, 0.85);
+       border-radius: 12px;
+       box-shadow: 0 0 20px rgba(0, 150, 255, 0.3);
+       border: 1px solid #333;
+     }
+     
+     .game-detail.fifa h1 {
+       font-size: 3rem;
+       color: #00c3ff;
+       margin-bottom: 10px;
+       text-transform: uppercase;
+       letter-spacing: 2px;
+       text-align: center;
+       border-bottom: 2px solid #00c3ff;
+       padding-bottom: 10px;
+     }
+     
+     .game-detail.fifa h2 {
+       font-size: 2rem;
+       color: #ffd700;
+       margin-top: 30px;
+       border-bottom: 1px solid #444;
+       padding-bottom: 5px;
+     }
+     
+     .game-detail.fifa p {
+       font-size: 1.2rem;
+       margin: 10px 0;
+     }
+     
+     .game-detail.fifa ul {
+       list-style-type: square;
+       padding-left: 20px;
+     }
+     
+     .game-detail.fifa li {
+       font-size: 1.1rem;
+       margin: 8px 0;
+       color: #ccc;
+       transition: color 0.3s ease;
+     }
+     
+     .game-detail.fifa li:hover {
+       color: #00c3ff;
+     }
+     
+     @media (max-width: 600px) {
+       .game-detail.fifa .container {
+         margin: 20px;
+         padding: 20px;
+       }
+     
+       .game-detail.fifa h1 {
+         font-size: 2.2rem;
+       }
+     
+       .game-detail.fifa h2 {
+         font-size: 1.6rem;
+       }
+     
+       .game-detail.fifa p,
+       .game-detail.fifa li {
+         font-size: 1rem;
+       }
+     }
+     

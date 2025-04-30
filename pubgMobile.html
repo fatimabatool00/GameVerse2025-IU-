@@ -22,5 +22,47 @@
       </ul>
     </div>
   </section>
+
+  <section id="register" class="section registration">
+    <div class="container">
+        <h2 class="section-title">Registration</h2>
+        <form id="registrationForm" class="registration-form">
+            <div class="form-toggle">
+                <button type="button" class="toggle-btn active" data-form="team">Team Registration</button>
+                <button type="button" class="toggle-btn" data-form="solo">Solo Registration</button>
+            </div>
+            
+            <div class="form-content active" id="teamForm">
+                <input type="text" placeholder="Team Name" required>
+                <input type="text" placeholder="University" required>
+                <input type="email" placeholder="Team Leader Email" required>
+                <div class="members">
+                    <input type="text" placeholder="Member 1" required>
+                    <input type="text" placeholder="Member 2">
+                    <input type="text" placeholder="Member 3">
+                    <input type="text" placeholder="Member 4">
+                </div>
+                <select required>
+                    <option value="">Select Game</option>
+                    <option>PUBG Mobile</option>
+                    <option>Call of Duty</option>
+                </select>
+            </div>
+
+            <div class="form-content" id="soloForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="text" placeholder="University" required>
+                <input type="email" placeholder="Email" required>
+                <select required>
+                    <option value="">Select Game</option>
+                    <option>FIFA 25</option>
+                </select>
+            </div>
+            <button type="submit" class="cta-btn">Submit Registration</button>
+        </form>
+    </div>
+</section>
+
+
 </body>
 </html>
