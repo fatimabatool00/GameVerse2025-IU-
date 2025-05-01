@@ -46,42 +46,66 @@ document.addEventListener('DOMContentLoaded', () => {
     countdown();
 
     // Load Games Dynamically
-    const gameGrid = document.querySelector('.game-grid');
+    // const gameGrid = document.querySelector('.game-grid');
+    const gameCarousel = document.getElementById('gameCarousel');
+
     const games = [
-        {
-            title: 'PUBG Mobile',
-            mode: '4v4 TDM',
-            prize: 'PKR 100,000',
-            image: 'assets/images/pubg.jpg'
-        },
-        {
-            title: 'COD: Black Ops 6',
-            mode: '5v5 Search & Destroy',
-            prize: 'PKR 120,000',
-            image: 'assets/images/cod.jpg'
-        },
         {
             title: 'FIFA 25',
             mode: '1v1 Elimination',
             prize: 'PKR 80,000',
-            image: 'assets/images/fifa.jpg'
-        }
+            image: 'assets/images/fifa.jpg',
+            link: 'fifa25.html'
+        },
+        {
+            title: 'Tekken 8',
+            mode: '1v1 Elimination',
+            prize: 'PKR 80,000',
+            image: 'assets/images/tekken.jpeg',
+            link: 'tekken8.html'
+        },
+        {
+            title: 'PUBG Mobile',
+            mode: '4v4 TDM',
+            prize: 'PKR 100,000',
+            image: 'assets/images/pubg.jpg',
+            link: 'pubgMobile.html'
+        },
+        {
+            title: 'COD:Black Ops 6',
+            mode: '5v5 Search & Destroy',
+            prize: 'PKR 120,000',
+            image: 'assets/images/cod.jpg',
+            link: 'codblackops6.html'
+        },
+        {
+            title: 'Valorant',
+            mode: '5v5 Elimination',
+            prize: 'PKR 80,000',
+            image: 'assets/images/valorant.jpeg',
+            link: 'valorant.html'
+        },
+        {
+            title: 'League Of Legends',
+            mode: '1v1 Elimination',
+            prize: 'PKR 80,000',
+            image: 'assets/images/lol.jpeg',
+            link: 'LOL.html'
+        },
     ];
 
+    // games.forEach(game => {
+   
+    const gameGrid = document.querySelector('.game-grid');
     games.forEach(game => {
         const card = document.createElement('div');
         card.classList.add('game-card');
-    
-        // Create game-specific URLs (use lowercase, no spaces)
-        const gameLink = game.title.toLowerCase().replace(/[^a-z0-9]/g, '') + '.html';
-    
         card.innerHTML = `
-            <a href="${gameLink}" class="game-link">
-                <img src="${game.image}" alt="${game.title}" style="width:100%; border-radius: 10px;">
-                <h3>${game.title}</h3>
-                <p><strong>Mode:</strong> ${game.mode}</p>
-                <p><strong>Prize:</strong> ${game.prize}</p>
-            </a>
+            <a href="${game.link || '#'}" class="game-link">
+            <img src="${game.image}" alt="${game.title}">
+            <h3>${game.title}</h3>
+            <p><strong>Mode:</strong> ${game.mode}</p>
+            <p><strong>Prize:</strong> ${game.prize}</p>
         `;
         gameGrid.appendChild(card);
     });
@@ -122,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const inputField = document.createElement('input');
                     inputField.type = 'text';
                     inputField.placeholder = `Member ${i}`;
-                    inputField.required = i === 1; // First member is required
+                    inputField.required = i === 1; 
                     membersDiv.appendChild(inputField);
                 }
             } else if (gameSelect.value === 'cod') {
@@ -131,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const inputField = document.createElement('input');
                     inputField.type = 'text';
                     inputField.placeholder = `Member ${i}`;
-                    inputField.required = i === 1; // First member is required
+                    inputField.required = i === 1; 
                     membersDiv.appendChild(inputField);
                 }
             }
@@ -175,15 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // document.querySelectorAll('.faq-question').forEach(question => {
-    //     question.addEventListener('click', () => {
-    //       const faqItem = question.parentElement;
-    //       faqItem.classList.toggle('active');
-    //       const toggle = question.querySelector('.toggle');
-    //       toggle.textContent = faqItem.classList.contains('active') ? '−' : '+';
-    //     });
-    //   });
-      
+    
     // Registration Submission 
     const registrationForm = document.getElementById('registrationForm');
 
@@ -207,4 +223,33 @@ document.addEventListener('DOMContentLoaded', () => {
             field.value = '';
         });
     });
+    // Variables for navigation
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+
+    // Function to update the transform property of the game-grid
+    const updateGridPosition = () => {
+        const gameCardWidth = document.querySelector('.game-card').offsetWidth;
+        const offset = -currentIndex * gameCardWidth;
+        gameGrid.style.transform = `translateX(${offset}px)`;
+    };
+
+    // Event listeners for the arrows
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < games.length - 3) { 
+            currentIndex++;
+            updateGridPosition();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateGridPosition();
+        }
+    });
+
+    // Initially set the position
+    updateGridPosition();
 });

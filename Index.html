@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark">
     <head>
         <meta charset="UTF-8">
@@ -38,7 +38,6 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="glitch">BATTLE FOR GLORY</h1>
-<<<<<<< HEAD
                 <p class="tagline">May 23, 2025 | PKR 300,000 Prize Pool</p>
                 <div class="countdown" id="countdown"></div>
                 <a href="#register" class="cta-btn pulse">Register Now <i class="fas fa-chevron-right"></i></a>
@@ -51,9 +50,6 @@
             <div class="hero-content">
                 <h1 class="glitch">BATTLE FOR GLORY</h1>
                 <p class="tagline">May 23, 2025 | PKR 300,000 Prize Pool</p>
-=======
-                <p class="tagline">May 23-25, 2025 | PKR 300,000 Prize Pool</p>
->>>>>>> fb8db0ca55bb117e1a7b8bafb398d5da08058600
                 <div class="countdown" id="countdown"></div>
                 <a href="#register" class="cta-btn pulse">Register Now <i class="fas fa-chevron-right"></i></a>
             </div>
@@ -61,13 +57,20 @@
     </section>
     
     <!-- Games Section -->
+   
     <section id="games" class="section games">
         <div class="container">
             <h2 class="section-title">Featured Games</h2>
-            <div class="game-grid"></div>
+            <div class="game-wrapper">
+                <button class="arrow-btn prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <div class="game-grid">
+                    <!-- Game cards will be inserted here dynamically -->
+                </div>
+                <button class="arrow-btn next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
     </section>
-
+    
     <!-- Prize Section
     <section id="prizes" class="section prizes">
         <div class="container">
@@ -81,12 +84,12 @@
     </section> -->
 
     <!-- Schedule Section -->
-    <section id="schedule" class="section schedule">
+    <!-- <section id="schedule" class="section schedule">
         <div class="container">
             <h2 class="section-title">Event Schedule</h2>
             <div class="timeline"></div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Registration Section -->
     <section id="register" class="section registration">
